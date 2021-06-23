@@ -130,3 +130,48 @@ a:hover{
     flex: 1;
 }
 
+/*Cart*/
+.cart{
+    margin: 1rem;
+    padding: 1rem;
+    display: flex;
+
+
+}
+.cart-header{
+    border-bottom: .1rem #000 solid;
+}
+.cart-item{
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+
+}
+.cart-item img{
+    width: 5rem;
+}
+.cart-item li{
+    display:flex;
+}
+.cart-item div{
+    padding: 0.1rem;
+}
+.cart-item div:last-child{
+    flex:1;
+}
+.right{
+    text-align: right;
+}
+.total{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.total{
+    font-size: 2rem;
+}
+.total > div,
+.total > button{
+    flex:1; 
+    font-size: 2rem;
+}

@@ -1,6 +1,7 @@
 
 import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import Cart from './Components/Cart';
 import Filter from './Components/Filter';
 import Header from './Components/Header';
 import Products from './Components/Products';
@@ -15,10 +16,33 @@ class App extends React.Component {
     super();  
     this.state={
       products : data.products,
+      cartItems:[],
       size: "",
       sort: ""
     };
    
+  }
+  RemoveFromCart=(product)=>{
+    const cartItems= this.state.cartItems.slice();
+    this.setState({
+        cartItems: cartItems.filter((x)=>x.id !== product.id),
+    });
+
+  }
+
+  AddtoCart=(products)=>{
+    const cartItems= this.state.cartItems.slice();
+    let alreadyToCart=false;
+    cartItems.forEach(item=>{
+      if(item.id === products.id){
+        item.count++;
+        alreadyToCart = true;
+      }
+    });
+    if(!alreadyToCart){
+      cartItems.push({...products,count:1});
+    }
+    this.setState({cartItems});
   }
   sortProduct=(event)=>{
     console.log(event.target.value);
@@ -65,10 +89,10 @@ class App extends React.Component {
              size={this.state.size}
              sortProduct={this.sortProduct}
              filterProduct={this.filterProduct}/>
-              <Products products={this.state.products}/>
+              <Products products={this.state.products} AddtoCart={this.AddtoCart}/>
            </div>
            <div className="sidebar">
-             Sidebar
+           <Cart cartItems={this.state.cartItems}  RemoveFromCart={this.RemoveFromCart}/>
            </div>
 
        </div>
