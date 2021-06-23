@@ -10,7 +10,7 @@ export default class Products extends Component {
                             <div className="product">
                                 <a href="#">
                                     <img src={products.image} alt={products.title}></img>
-                                    <p>
+                                    <p className="text-center">
                                         {products.title}
                                     </p>
                                 </a>

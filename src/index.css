@@ -118,3 +118,15 @@ a:hover{
     background-color: #ffc000;
 }
 
+/*Filter*/
+.filter{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    margin: 1rem;
+    border-bottom: 0.1rem #000 solid;
+}
+.filter div{
+    flex: 1;
+}
+
