@@ -175,3 +175,20 @@ a:hover{
     flex:1; 
     font-size: 2rem;
 }
+/*Checkout*/
+.form-container{
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+.form-container li{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+form{
+    width: 100%;
+}
+input{
+    padding: 1rem;
+}
